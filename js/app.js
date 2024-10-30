@@ -1,3 +1,8 @@
+// Initialization for ES Users
+
+
+
+
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const formulario = document.querySelector('#loginForm');
