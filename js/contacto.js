@@ -1,43 +1,65 @@
-const name = document.querySelector("#name");
-const apellidos = document.querySelector("#apellidos");
-const phone = document.querySelector("#phone");
-const email = document.querySelector("#email");
-const message = document.querySelector("#message");
+import { consumir_funcion } from "../supabase/operaciones.js";
+
+// Selecciona los elementos del DOM
+const p_nombre = document.querySelector("#p_nombre");
+const p_apellido = document.querySelector("#p_apellido");
+const p_direccion = document.querySelector("#p_direccion");
+const p_telefono = document.querySelector("#p_telefono");
+const p_email = document.querySelector("#p_email");
+const p_comentarios = document.querySelector("#p_comentarios");
 const form = document.querySelector("#formulario-contacto");
-const dataContacto = {
-  name: "",
-  apellidos: "",
-  phone: "",
-  email: "",
-  message: "",
-};
 
-name.addEventListener("input", leerInput);
-apellidos.addEventListener("input", leerInput);
-phone.addEventListener("input", leerInput);
-email.addEventListener("input", leerInput);
-message.addEventListener("input", leerInput);
-
-function leerInput(e) {
-  dataContacto[e.target.id] = e.target.value;
-  console.log(dataContacto);
+// Obtiene la fecha actual en formato YYYY-MM-DD
+function obtenerFechaActual() {
+  const fecha = new Date();
+  const año = fecha.getFullYear();
+  const mes = String(fecha.getMonth() + 1).padStart(2, '0'); // Mes en formato MM
+  const dia = String(fecha.getDate()).padStart(2, '0');       // Día en formato DD
+  return `${año}-${mes}-${dia}`;
 }
 
-form.addEventListener("submit", (e) => {
+// Añade el evento de envío al formulario
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const { name, apellidos, phone, email, mensaje } = dataContacto;
+
+  // Crea un objeto de datos con los valores actuales del formulario
+  const dataContacto = {
+    p_nombre: p_nombre.value,
+    p_apellido: p_apellido.value,
+    p_email: p_email.value,
+    p_telefono: p_telefono.value,
+    p_direccion: p_direccion.value,
+    p_fecha_registro: obtenerFechaActual(),
+    p_fecha_envio: obtenerFechaActual(),
+    p_estado: "inicio",
+    p_comentarios: p_comentarios.value,
+  };
+
+  // Verifica si hay campos vacíos
   if (
-    name === "" ||
-    apellidos === "" ||
-    phone === "" ||
-    email === "" ||
-    mensaje === ""
+    dataContacto.p_nombre === "" ||
+    dataContacto.p_apellido === "" ||
+    dataContacto.p_telefono === "" ||
+    dataContacto.p_email === "" || 
+    dataContacto.p_comentarios === "" ||
+    dataContacto.p_direccion === ""
   ) {
-    console.log("Todos los campos son obligatorios");
     alert("Todos los campos son obligatorios");
     return;
   }
+
   console.log("Enviando formulario");
+
+  // Llama a la función en Supabase para insertar datos
+  const respuesta = await consumir_funcion("insert_cliente_formulario", dataContacto);
+
+  // Manejo de la respuesta
+  if (respuesta.error) {
+    console.error("Error al enviar formulario:", respuesta.error);
+    alert("Error al enviar formulario: " + respuesta.error.message);
+    return;
+  }
+
   alert("Formulario enviado");
   console.log(dataContacto);
   form.reset();
