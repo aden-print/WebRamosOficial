@@ -24,9 +24,9 @@ form.addEventListener("submit", async (e) => {
 
   // Crea un objeto de datos con los valores actuales del formulario
   const dataContacto = {
-    p_nombre: p_nombre.value,
-    p_apellido: p_apellido.value,
-    p_email: p_email.value,
+    p_nombres: p_nombre.value, // Asegúrate de que estos nombres coincidan
+    p_apellidos: p_apellido.value,
+    p_correo: p_email.value,
     p_telefono: p_telefono.value,
     p_direccion: p_direccion.value,
     p_fecha_registro: obtenerFechaActual(),
@@ -37,10 +37,10 @@ form.addEventListener("submit", async (e) => {
 
   // Verifica si hay campos vacíos
   if (
-    dataContacto.p_nombre === "" ||
-    dataContacto.p_apellido === "" ||
+    dataContacto.p_nombres === "" ||
+    dataContacto.p_apellidos === "" ||
     dataContacto.p_telefono === "" ||
-    dataContacto.p_email === "" || 
+    dataContacto.p_correo === "" || 
     dataContacto.p_comentarios === "" ||
     dataContacto.p_direccion === ""
   ) {
