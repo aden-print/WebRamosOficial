@@ -1,3 +1,4 @@
+/* General */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -31,10 +32,11 @@ nav ul {
     display: flex;
     justify-content: center;
     background-color: #444;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 nav ul li a {
@@ -61,7 +63,7 @@ main {
     text-align: center;
 }
 
-/* Servicios */
+/* Servicios y Grillas */
 .services-grid, .profiles-grid, .inventory-grid {
     display: flex;
     flex-wrap: wrap;
@@ -93,7 +95,6 @@ main {
 .service-item p, .profile-item p, .inventory-item p {
     margin: 0;
 }
-
 
 /* Inventario */
 .inventory-grid {
@@ -128,9 +129,50 @@ main {
     margin: 5px 0;
 }
 
+/* Footer */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .service-item, .profile-item, .inventory-item {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-item, .profile-item, .inventory-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    header img {
+        max-width: 100px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    nav ul li a {
+        padding: 10px;
+    }
 }

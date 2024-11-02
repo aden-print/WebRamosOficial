@@ -1,3 +1,15 @@
+/* General */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
 header {
     background-color: #333;
     color: white;
@@ -16,6 +28,7 @@ header h1 {
     margin: 0;
 }
 
+/* Navigation */
 nav ul {
     list-style: none;
     margin: 0;
@@ -23,16 +36,17 @@ nav ul {
     display: flex;
     justify-content: center;
     background-color: #444;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     display: block;
     transition: background-color 0.3s ease;
 }
@@ -41,18 +55,56 @@ nav ul li a:hover {
     background-color: #555;
     color: white;
 }
-* {
-  box-sizing: border-box;
-  font-size: sans-serif;
-}
-main{
+
+/* Main */
+main {
     margin: 25px auto;
     width: 95%;
 }
 
+/* Footer */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    main {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header img {
+        max-width: 90px;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    nav ul li a {
+        padding: 8px 10px;
+    }
+
+    main {
+        width: 100%;
+        padding: 10px;
+    }
 }
