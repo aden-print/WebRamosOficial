@@ -1,107 +1,94 @@
 /* General */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f4f4f4;
+}
+
+h2 {
     color: #333;
+    font-weight: bold;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+/* Barra de navegación */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    transition: top 0.3s;
 }
 
-header img {
-    max-width: 120px;
-    height: auto;
-    margin-bottom: 10px;
+#navbar .navbar-brand img {
+    margin-right: 10px;
 }
 
-header h1 {
-    font-size: 2rem;
-    margin: 0;
+/* Animación al pasar el cursor sobre los enlaces de la barra de navegación */
+.navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: bold;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    background-color: #444;
-    flex-wrap: wrap;
+.navbar-nav .nav-link:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    color: #f8f9fa !important; /* Cambia a un color ligeramente más claro */
 }
 
-nav ul li {
-    margin: 0 10px;
+
+/* Ocultar barra al hacer scroll */
+#navbar.hide {
+    top: -80px; /* Mueve la barra fuera de la pantalla */
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    display: block;
-    transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: #555;
+/* Carrusel */
+#hero {
+    margin-top: 0px; /* Para que no quede debajo de la barra de navegación */
 }
 
 /* Hero Section */
 #hero {
-    background: url('https://tcsistemes.com/wp-content/uploads/2017/02/edif_tecalum_ext-1.jpg') center/cover no-repeat;
-    color: white;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+    position: relative;
+    width: 100%;
+    max-height: 730px;
+    overflow: hidden;
 }
 
-.hero-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height:730px;
+    object-fit: cover;
 }
 
-.hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.btn {
-    padding: 10px 20px;
-    background-color: #ff8800;
-    color: white;
-    text-decoration: none;
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #e67300;
-}
-
-/* Vision and Mission */
+/* Vision y Mission */
 #vision-mision {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
     padding: 50px 20px;
     background-color: #fff;
     text-align: center;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#vision-mision .card:hover {
+    transform: translateY(-10px); /* Efecto de elevarse al pasar el ratón */
 }
 
 #vision-mision div {
     max-width: 400px;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 #vision-mision h2 {
@@ -124,90 +111,37 @@ nav ul li a:hover {
 #proyectos img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#proyectos p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+#proyectos .btn {
+    margin-top: 20px;
+    background-color: #343a40;
+    border-color: #343a40;
+    color: #fff;
+    font-weight: bold;
 }
 
-#proyectos a {
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+#proyectos .btn:hover {
+    background-color: #495057;
+    border-color: #495057;
 }
 
-#proyectos a:hover {
-    background-color: #555;
-}
-
-/* Footer */
+/* Estilo del footer */
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
+    background-color: #343a40;
+    color: rgb(6, 6, 6);
     padding: 20px;
 }
 
-/* Media Queries */
+/* Estilo responsive */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;
+    #navbar .navbar-nav {
+        text-align: center;
     }
 
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 5px 0;
-    }
-
-    #hero {
-        height: 300px;
-    }
-
-    .hero-text h2 {
-        font-size: 2rem;
-    }
-
-    #vision-mision {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 480px) {
-    header img {
-        max-width: 90px;
-    }
-
-    header h1 {
-        font-size: 1.2rem;
-    }
-
-    nav ul li a {
-        padding: 8px 10px;
-    }
-
-    #hero {
-        height: 200px;
-    }
-
-    .hero-text h2 {
-        font-size: 1.8rem;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-    }
-
-    #vision-mision div {
-        max-width: 100%;
+    .carousel-caption {
+        display: none;
     }
 }
