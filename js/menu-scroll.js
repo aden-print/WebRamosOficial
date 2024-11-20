@@ -1,16 +1,9 @@
-let navbar = document.getElementById("navbar");
-let prevScrollPos = window.pageYOffset;
-
-window.onscroll = function () {
-    let currentScrollPos = window.pageYOffset;
-
-    if (currentScrollPos === 0) {
-        // Muestra la barra de navegación al estar en la parte superior
-        navbar.classList.remove("hide");
-    } else if (prevScrollPos > currentScrollPos) {
-        // Oculta la barra al desplazarse hacia abajo
-        navbar.classList.add("hide");
+menu-scroll.js
+document.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
     }
-
-    prevScrollPos = currentScrollPos;
-};
+});

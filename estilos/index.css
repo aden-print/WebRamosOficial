@@ -5,143 +5,170 @@ body {
     padding: 0;
 }
 
-h2 {
-    color: #333;
+h2, h5 {
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
 }
 
-/* Barra de navegación */
-#navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
-    transition: top 0.3s;
+/* Navbar */
+.navbar {
+    transition: background-color 0.3s, top 0.3s;
 }
 
-#navbar .navbar-brand img {
-    margin-right: 10px;
+.navbar.bg-transparent {
+    background-color: transparent;
 }
 
-/* Animación al pasar el cursor sobre los enlaces de la barra de navegación */
-.navbar-nav .nav-link {
-    color: #fff !important;
-    font-weight: bold;
-    transition: transform 0.2s ease, color 0.2s ease;
+.navbar.bg-light {
+    background-color: #f8f9fa;
 }
 
-.navbar-nav .nav-link:hover {
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
-    color: #f8f9fa !important; /* Cambia a un color ligeramente más claro */
-}
-
-
-/* Ocultar barra al hacer scroll */
-#navbar.hide {
-    top: -80px; /* Mueve la barra fuera de la pantalla */
-}
-
-/* Carrusel */
-#hero {
-    margin-top: 0px; /* Para que no quede debajo de la barra de navegación */
+.navbar.hide {
+    top: -100px;
 }
 
 /* Hero Section */
-#hero {
-    position: relative;
-    width: 100%;
-    max-height: 730px;
-    overflow: hidden;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: auto;
-    max-height:730px;
+#hero .carousel-inner img {
+    height: 100vh;
     object-fit: cover;
 }
 
-.carousel-caption {
+#hero .carousel-caption {
     background: rgba(0, 0, 0, 0.5);
-    padding: 10px;
     border-radius: 5px;
+    padding: 15px;
 }
 
-/* Vision y Mission */
-#vision-mision {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 50px 20px;
-    background-color: #fff;
-    text-align: center;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+/* Visión y Misión */
+#vision-mision .card {
+    border: none;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: transform 0.3s;
 }
 
 #vision-mision .card:hover {
-    transform: translateY(-10px); /* Efecto de elevarse al pasar el ratón */
+    transform: scale(1.05);
 }
 
-#vision-mision div {
-    max-width: 400px;
-    margin: 20px;
-}
-
-#vision-mision h2 {
-    color: #333;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-#vision-mision p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* Projects Section */
-#proyectos {
-    text-align: center;
-    padding: 50px 20px;
+/* Proyectos Section */
+#proyectos h2 {
+    font-weight: bold;
 }
 
 #proyectos img {
     max-width: 100%;
-    height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#proyectos .btn {
-    margin-top: 20px;
-    background-color: #343a40;
-    border-color: #343a40;
-    color: #fff;
+/* Fondo para la sección del contador */
+#overlay {
+    position: relative;
+    padding: 130px 0;
+    color: #fff; /* Asegura que el texto sea visible */
+    background: url('https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg') no-repeat center center;
+    background-size: cover;
+}
+
+#overlay .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5); /* Efecto de oscurecimiento */
+}
+
+#overlay .container {
+    position: relative;
+    margin: 10px 30px;
+    z-index: 2;
+}
+
+/* Estilo para los contadores */
+#overlay .counter h6 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #f8f9fa; /* Asegura el contraste */
+    transition: transform 0.3s ease;
+}
+
+#overlay .counter h6:hover {
+    transform: scale(1.1); /* Aumenta ligeramente al pasar el ratón */
+}
+
+#overlay .counter p {
+    font-size: 1rem;
+    color: #e3e3e3;
+}
+
+
+/* Animaciones y efectos */
+.counter h6 {
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
 }
 
-#proyectos .btn:hover {
-    background-color: #495057;
-    border-color: #495057;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-/* Estilo del footer */
-footer {
-    background-color: #343a40;
-    color: rgb(6, 6, 6);
-    padding: 20px;
+.carousel-caption {
+    animation: fadeIn 2s ease-in;
 }
 
-/* Estilo responsive */
-@media (max-width: 768px) {
-    #navbar .navbar-nav {
-        text-align: center;
-    }
+/* Footer */
+.footer {
+    position: relative;
+    padding: 20px 0;
+    background: #212529; /* Fondo oscuro */
+    color: #e3e3e3; /* Texto claro */
+}
 
-    .carousel-caption {
-        display: none;
-    }
+.footer h5 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.footer ul li a {
+    color: #e3e3e3;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #f8f9fa;
+}
+
+.footer .fab, .footer .fas {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.footer .fab:hover, .footer .fas:hover {
+    transform: scale(1.2);
+    color: #f8f9fa;
+}
+
+.footer p {
+    margin: 30;
+    font-size: 0.9rem;
 }
