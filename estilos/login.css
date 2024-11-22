@@ -1,245 +1,107 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 29 set. 2024, 18:35:01
-    Author     : eduar
-*/
-
+/* Estilos Generales */
 * {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-size: cover;
-}
-
-.container-form {
-    display: flex;
-    border-radius: 20px;
-    box-shadow: 0 5px 7px rgba(0, 0, 0, .1);
-    height: 500px;
-    max-width: 900px;
-    transition: all 1s ease;
-    margin: 10px;
-}
-
-.information {
-    width: 40%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    background-color:#f0e8d0;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-
-.info-childs {
-    width: 100%;
-    padding: 0 30px;
-}
-
-.info-childs h2 {
-    font-size: 2.5rem;
-    color: #333;
-}
-
-.info-childs p {
-    margin: 15px 0 ;
-    color: #555;
-}
-
-.info-childs input {
-    background-color: transparent;
-    outline: none;
-    border: solid 2px #6F724F;
-    border-radius: 20px;
-    padding: 10px 20px;
-    color: #6F724F;
-    cursor: pointer;
-    transition: background-color .3s ease;
-}
-
-.info-childs input:hover {
-    background-color:#808459;
-    border: none;
-    color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
-}
-
-.form-information {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60%;
-    text-align: center;
-    background-color: #f8f8f8;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.form-information-childs {
-    padding: 0 30px;
-}
-
-.form-information-childs h2 {
-    color: #333;
-    font-size: 2rem;
-}
-
-.form-information-childs p {
-    color: #555;
-}
-.form {
-    margin: 30px 0 0 0;
-}
-
-.form label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    border-radius: 20px;
-    padding: 0 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
-}
-
-.form label input {
-    width: 100%;
-    padding: 10px;
-    background-color: #fff;
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    color: #333;
-}
-
-.form label i {
-    color: #a7a7a7;
-}
-.form input[type="submit"] {
-    background-color: #6F724F;
-    color: #fff;
-    border-radius: 20px;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    margin-top: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
-}
-.form input[type="submit"]:hover {
-    background-color: #808459;
-}
-
-.hide {
-    position: absolute;
-    transform: translateY(-300%);
-}
-
-/*PERSONALIZACION DE ALERTAS Y MENSAJES */
-.form div .alerta {
-    width: 290px;
-    text-align: left;
-    border-radius: 7px;
-    margin-bottom: 10px;
-    font-size: .8rem;
-}
-
-.form > .alerta-error,
-.form > .alerta-exito {
-    display: none;
-}
-
-.form .alertaError {
-    display: block;
-    background-color: #F66060;
-    padding: .5rem 1rem;
-    margin-top: 10px;
-    font-weight: 500;
-    font-size: .8rem;
-}
-
-.form .alertaExito {
-    display: block;
-    background-color: #0ca828;
-    padding: .5rem 1rem;
-    margin-top: 10px;
-    font-weight: 500;
-    font-size: .8rem;
-}
-
-.form .error {
-    outline: solid 2px #9d2222;
-}
-
-/*RESPONSIVE FORM*/
-
-@media screen and (max-width:750px) {
-    html {
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width:580px) {
-    html {
-        font-size: 15px;
-    }
-
-    .container-form {
-        height: auto;
-        flex-direction: column;
-    }
-
-    .information {
-        width: 100%;
-        padding: 20px;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0;
-    }
-
-    .form-information {
-        width: 100%;
-        padding: 20px;
-        border-bottom-left-radius: 20px;
-        border-top-right-radius: 0;
-    }
-}
-
-.volver-inicio {
-    text-decoration: none;
-    color: white;
-    background-color: #007bff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    display: inline-block;
-    text-align: center;
-}
-
-.volver-inicio:hover {
-    background-color: #0056b3;
-}
-
-.btn-volver-inicio {
-    color: white;
-    background-color: #28a745;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn-volver-inicio:hover {
-    background-color: #218838;
-}
+    font-family: sans-serif;
+  }
+  
+  header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+  }
+  
+  header img {
+      max-width: 120px;
+      height: auto;
+      margin-bottom: 10px;
+  }
+  
+  header h1 {
+      font-size: 2rem;
+      margin: 0;
+  }
+  
+  nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      flex-wrap: wrap;
+  }
+  
+  nav ul li {
+      margin: 0 10px;
+  }
+  
+  nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+      transition: background-color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+      background-color: #555;
+      color: white;
+  }
+  
+  main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      min-height: 100vh;
+      background-color: #f4f4f4;
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+  }
+  
+  /* Media Queries para dispositivos más pequeños */
+  @media (max-width: 768px) {
+      header h1 {
+          font-size: 1.5rem;
+      }
+  
+      nav ul {
+          flex-direction: column;
+      }
+  
+      nav ul li {
+          margin: 5px 0;
+      }
+  
+      main {
+          padding: 10px;
+      }
+  }
+  
+  @media (max-width: 480px) {
+      header img {
+          max-width: 90px;
+      }
+  
+      header h1 {
+          font-size: 1.2rem;
+      }
+  
+      nav ul {
+          flex-direction: column;
+          align-items: center;
+      }
+  
+      nav ul li a {
+          padding: 8px 10px;
+      }
+  }
+  
