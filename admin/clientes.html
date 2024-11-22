@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Empresa Constructora</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <nav>
+            <ul>
+                <li><a href="#dashboard">Inicio</a></li>
+                <li><a href="#clients">Clientes</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#budget">Presupuestos</a></li>
+                <li><a href="#calendar">Calendario</a></li>
+                <li><a href="#reports">Reportes</a></li>
+                <li><a href="#settings">Configuración</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <header>
+            <h1>Bienvenido al Panel de Administración</h1>
+        </header>
+        <section id="dashboard">
+            <h2>Inicio</h2>
+            <p>Resumen general del estado de los proyectos y actividad reciente.</p>
+        </section>
+        <section id="clients">
+            <h2>Clientes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Estado del Proyecto</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="client-list">
+                    <!-- Aquí se generarán dinámicamente los datos -->
+                </tbody>
+            </table>
+        </section>
+        <section id="projects">
+            <h2>Proyectos</h2>
+            <p>Detalles específicos por cliente y estado del proyecto.</p>
+        </section>
+        <section id="budget">
+            <h2>Presupuestos</h2>
+            <p>Gestión de presupuestos por cliente y proyecto.</p>
+        </section>
+        <section id="calendar">
+            <h2>Calendario</h2>
+            <p>Planificación y cronograma de los proyectos.</p>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
